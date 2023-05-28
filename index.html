@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+        <title>
+            Frontend Mentor | Newsletter sign-up form with success message
+        </title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            roboto: ['Roboto', 'sans-serif'],
+                        },
+                        colors: {
+                            // primary
+                            tomato: 'hsl(4, 100%, 67%)',
+                            // Neutral
+                            darkSlateGrey: 'hsl(234, 29%, 20%)',
+                            charcoalGrey: 'hsl(235, 18%, 26%)',
+                            grey: 'hsl(231, 7%, 60%)',
+                            white: 'hsl(0, 0%, 100%)',
+                        },
+                        backgroundImage: {
+                            img: 'url("./assets/images/illustration-sign-up-desktop.svg")',
+                        },
+                    },
+                },
+            }
+        </script>
+        <script src="script.js" defer></script>
+    </head>
+    <body class="font-roboto bg-charcoalGrey">
+        <!-- Sign-up form start -->
+
+        <main
+            class="lg:rounded-3xl bg-white lg:absolute lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 lg:top-1/2 lg:left-1/2 lg:p-5 text-darkSlateGrey flex lg:flex-row flex-col-reverse lg:w-[880px] w-full transition-all duration-300 lg:gap-0 gap-10"
+        >
+            <div class="self-center lg:px-14 px-6 w-full lg:pb-0 pb-20">
+                <h1 class="lg:text-5xl text-4xl font-bold">Stay updated!</h1>
+                <p class="my-4">
+                    Join 60,000+ product managers receiving monthly updates on:
+                </p>
+                <div class="flex flex-col gap-2 mb-10">
+                    <div class="flex items-center gap-4">
+                        <img
+                            src="./assets/images/icon-list.svg"
+                            alt="Check List"
+                        />
+                        <p>Product discovery and building what matters</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <img
+                            src="./assets/images/icon-list.svg"
+                            alt="Check List"
+                        />
+                        <p>Measuring to ensure updates are a success</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <img
+                            src="./assets/images/icon-list.svg"
+                            alt="Check List"
+                        />
+                        <p>And much more!</p>
+                    </div>
+                </div>
+                <form id="form" class="flex flex-col mt-5 gap-1">
+                    <label for="email" class="font-bold">
+                        <div class="flex justify-between">
+                            <p>Email address</p>
+                            <p id="err" class="text-tomato hidden">
+                                Valid email required
+                            </p>
+                        </div>
+                    </label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="email@company.com"
+                        class="border border-gray rounded-md p-3 focus:outline-none focus:border-darkSlateGrey"
+                    />
+                    <button
+                        class="bg-darkSlateGrey rounded-md py-3 text-white font-bold tracking-wide mt-4 hover:bg-gradient-to-r from-[#fe5279] to-[#fe6648] focus:outline-none"
+                        type="submit"
+                    >
+                        Subscribe to monthly newsletter
+                    </button>
+                </form>
+            </div>
+            <div class="w-full">
+                <img
+                    src="./assets/images/illustration-sign-up-desktop.svg"
+                    alt="illustration"
+                    class="object-cover lg:inline hidden"
+                />
+                <img
+                    src="./assets/images/illustration-sign-up-mobile.svg"
+                    alt="illustration"
+                    class="object-contain w-full h-full inline lg:hidden"
+                />
+            </div>
+        </main>
+
+        <!-- Sign-up form end -->
+
+        <!-- Success message start -->
+
+        <dialog
+            id="success"
+            class="md:rounded-3xl md:w-[500px] md:p-10 md:backdrop:bg-charcoalGrey backdrop:bg-white transition-all duration-300"
+        >
+            <div class="flex flex-col gap-10 items-start">
+                <img src="./assets/images/icon-success.svg" alt="Success" />
+                <h1 class="md:text-5xl text-4xl font-bold">
+                    Thanks for subscribing!
+                </h1>
+                <p>
+                    A confirmation email has been sent to
+                    <b>ash@loremcompany.com.</b>
+                    Please open it and click the button inside to confirm your
+                    subscription.
+                </p>
+                <button
+                    id="dismiss"
+                    class="bg-darkSlateGrey rounded-md py-3 text-white font-bold tracking-wide mt-4 hover:bg-gradient-to-r from-[#fe5279] to-[#fe6648] w-full focus:outline-none"
+                >
+                    Dismiss message
+                </button>
+            </div>
+        </dialog>
+        <!-- Success message end -->
+    </body>
+</html>

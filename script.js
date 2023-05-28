@@ -11,6 +11,7 @@ form.addEventListener('submit', (e) => {
     if (validateEmail(email.value)) {
         err.classList.add('hidden')
         email.classList.remove(...classes)
+        document.getElementById('mail').innerText = email.value
         success.showModal()
     } else {
         email.classList.add(...classes)
